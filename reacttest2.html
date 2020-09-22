@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+	
+
+</head>
+<body>
+  <div id="dispTitle"></div>
+<script type="text/babel">
+	class Car extends React.Component {
+	  constructor(name) {
+	  	super();
+	    this.brand = name;
+	  }
+	
+	  present() {
+	    return 'I have a ' + this.brand;
+	  }
+	  
+	  render() {
+	  	return <div>
+	  						<h2>{this.present()}</h2>
+	  				 </div>;
+	  }
+	  
+	}
+	
+	class Model extends Car {
+		constructor(name, mod)	{
+			super(name);
+			this.model = mod;
+		}
+		
+		show() {
+			return this.present() + ', it is a ' + this.model;
+		}
+	}
+	
+	var mycar =  new Model("kia", "sepia");
+	//document.write(mycar.show());
+	//$('#dispTitle').text('jQuery: ' + mycar.show());
+	ReactDOM.render(<Car />, document.getElementById('dispTitle'));
+</script>
+
+</body>
+</html>

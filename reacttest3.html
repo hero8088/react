@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+	
+
+</head>
+<body>
+  <div id="dispTitle"></div>
+  <div id="root"></div>
+<script type="text/babel">
+class Car extends React.Component {
+  constructor() {
+    super();
+    this.state1 = {color: "red", product:"banana"};
+    this.hjs = 'team1';
+  }
+  render() {
+    return <div>
+    					<h2>I am a {this.state1.color} Car!</h2>
+    					<hr/>
+    					<h1>I Love {this.state1.product}!!!</h1>
+    					<hr/>
+    					<div>{this.hjs}</div>
+    					<hr/>
+    					<Magic param1="baby in english"/>
+    				</div>;
+  }
+}
+
+class Magic extends React.Component {
+	render() {
+		return <div><hr/>{this.props.param1}</div>;
+	}
+}
+
+ReactDOM.render(<Car />, document.getElementById('dispTitle'));
+
+
+</script>
+
+</body>
+</html>

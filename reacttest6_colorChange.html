@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+	
+
+</head>
+<body>
+  <div id="root"></div>
+</hr>
+  <div id="root1"></div>
+<script type="text/babel">
+	
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+    	if(this.state.favoritecolor === "red"){
+      	this.setState({favoritecolor: "component"})
+      } else {
+      	this.setState({favoritecolor: "red"})
+      }
+    }, 1000)
+  }
+  
+  render() {
+  	const element = <div> + ret1() + ret2() + </div>
+    return (
+    	element
+    );
+  }
+}
+
+function ret1() {
+		return <h1>리턴을 패턴별로 컴포넌트화 해서 내보 낼 수 있다.</h1>;
+}
+
+function ret2() {
+		return <h1>ReactDOM에 함수를 쓸 수 있다.</h1>;
+}
+	
+//	ReactDOM.render(ret1(), document.getElementById('root'));
+	ReactDOM.render(<Header />, document.getElementById('root1'));
+
+</script>
+
+</body>
+</html>

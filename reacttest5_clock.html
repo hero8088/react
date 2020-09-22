@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+	
+
+</head>
+<body>
+  <div id="root"></div>
+  
+<script type="text/babel">
+	
+	class Clock extends React.Component {
+		constructor(props) {
+			super(props);
+			this.state = {ate: new Date()};
+		}
+			
+		componentDidMount() {
+			this.timerID = setInterval(
+				() => this.tick(), 1000
+			);
+		}
+		
+		componentWillUnmount() {
+			clearInterval(this.timerID);
+		}
+		
+		tick() {
+			this.setState({
+				ate: new Date()	
+			});
+		}
+		
+		render() {
+			return (
+				<div>
+					<h1>It is {this.state.ate.toLocaleTimeString()}.</h1>
+				</div>
+			);
+		}
+	}
+	
+	ReactDOM.render(<Clock />, document.getElementById('root'));
+
+</script>
+
+</body>
+</html>
