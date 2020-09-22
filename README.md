@@ -1,7 +1,7 @@
 # react
 react study
 
-
+<pre>
 React LifeCycle = Lifecycle of Components (구성요소의 생명주기)
 
 1. Mounting : Dom에 요소를 주입
@@ -22,3 +22,4 @@ React LifeCycle = Lifecycle of Components (구성요소의 생명주기)
 	built-in Method : 	A. componentWillUnmount() - component의 마운트해제 시 호출되는 메소드 ( 나 집에 가요 ~ )
 
 component가 mount된다는 것 : Dom에 사용되거나 다른 component의 rendering에 사용되는 경우
+</pre>
