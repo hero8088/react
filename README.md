@@ -9,10 +9,8 @@ react study
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
 
 
-
+**React LifeCycle = Lifecycle of Components (구성요소의 생명주기)**
 <pre>
-<b>**React LifeCycle = Lifecycle of Components (구성요소의 생명주기)**</b>
-
 1. Mounting : Dom에 요소를 주입
 	built-in Method : 	A. constructor() - 생성자 [ props를 인수로 받을 수 있고 state의 초기화 할 수 있다 ]
 			B. getDerivedStateFormProps() [ Props로 부터 파생된 state : props를 기반으로 state를 setting  ]
