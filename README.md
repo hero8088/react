@@ -2,10 +2,10 @@
 react study
 
 **CDN**
-1. react cdn - 학습용으로 구동이 안되는 기능도 있다.
+1. react cdn - 학습용으로 구동이 안되는 기능도 있다. <br/>
 	<script src="https://unpkg.com/react@15/dist/react.js"></script>
 	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-2. JSX cdn - JSX는 CDN이 별도로 없고 자바스크립드 컴파일러인 BABEL의 browser.js를 땡기면 된다.
+2. JSX cdn - JSX는 CDN이 별도로 없고 자바스크립드 컴파일러인 BABEL의 browser.js를 땡기면 된다. <br/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
 
 
