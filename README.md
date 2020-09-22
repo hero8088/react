@@ -1,8 +1,17 @@
 # react
 react study
 
+**CDN**
+1. react cdn - 학습용으로 구동이 안되는 기능도 있다.
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+2. JSX cdn - JSX는 CDN이 별도로 없고 자바스크립드 컴파일러인 BABEL의 browser.js를 땡기면 된다.
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+
+
+
 <pre>
-React LifeCycle = Lifecycle of Components (구성요소의 생명주기)
+<b>**React LifeCycle = Lifecycle of Components (구성요소의 생명주기)**</b>
 
 1. Mounting : Dom에 요소를 주입
 	built-in Method : 	A. constructor() - 생성자 [ props를 인수로 받을 수 있고 state의 초기화 할 수 있다 ]
