@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+	
+</head>
+<body>
+  <div id="root"></div>
+</hr>
+  <div id="root1"></div>
+<script type="text/babel">
+	
+class Football extends React.Component {
+
+	shoot = (a) => {
+		alert(a);
+	}
+	render() {
+		return (
+			<button onClick={ () => this.shoot("Goal")}>Take the shot!</button>
+			);
+	}
+}
+ReactDOM.render(<Football />, document.getElementById('root'));
+</script>
+
+</body>
+</html>
