@@ -58,3 +58,21 @@ component가 mount된다는 것 : Dom에 사용되거나 다른 component의 ren
 		5. 따라서 function (class도 function이다) 내부에 선언된 Arrow Function은
 		   자신을 포함한 함수의 인스턴스를 this로 갖는다.
 
+** 특이점 **
+https://ko.reactjs.org/docs/react-component.html
+
+componentDidUpdate()에서 setState()를 즉시 호출할 수도 있지만, 위의 예시처럼 조건문으로 감싸지 않으면 무한 반복이 발생할 수 있다는 점에 주의하세요.
+이것때매 겁나 삽질을 .. 미완성 라이브러리라는 건가..
+현재 값이 그 값이 아닌지의 if를 포함해야 한다는 얘긴가보다...
+
+   	componentDidUpdate() {
+		if(!this.state.username){
+			if (this.state.clock !== 'Y'){
+				this.setState({clock:'Y'});
+			}
+		}else{
+			if (this.state.clock !== 'N'){
+				this.setState({clock:'N'});
+			}
+		}
+	}
