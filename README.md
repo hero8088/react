@@ -1,6 +1,13 @@
 # react
 react study
 
+**참고사이트**
+React : https://ko.reactjs.org/
+        https://www.w3schools.com/react/default.asp
+	 
+Arrow Function : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98
+
+
 **CDN**
 1. react cdn - 학습용으로 구동이 안되는 기능도 있다. <br/>
 	<script src="https://unpkg.com/react@15/dist/react.js"></script><br/>
@@ -30,3 +37,27 @@ react study
 
 component가 mount된다는 것 : Dom에 사용되거나 다른 component의 rendering에 사용되는 경우
 </pre>
+
+**Events**
+    Html과 React의 event 표현의 차이
+    Html : <button onclick="shoot()"></button>
+    React : <button onClick={shoot()}></button> 
+              camelCase, {} 의 특징이 다르다.
+	
+    이벤트 구문을 컴포넌트 클래스 안에 배치하는것이 좋다.
+	Arrow Function [ () => {} ]을 사용하면 그 function의 this는 Arrow Function의 정의된 Object(Class) 이다.
+	class component에는 this 키워드가 기본적으로 정의 되지 않기 때문에 Arrow Function을 사용하지 않으면
+	일반적인 function은 그것을 호출한 객체 [ button, window ] 가 this가 된다.
+	
+	다른 방법으로는 일반 function을 정의하고 class component의 생성자에 바인딩하는 방법이 있다.
+	[ this.shoot = this.shoot.bind(this) ]
+	
+	**function의 this**
+		1. function은 자기자신의 인스턴트를 this로 갖는다.
+		2. inner function은 전역객체를 this로 갖는다.
+		3. 전역객체는 인스턴스를 참조 할 수 없으므로 function 내에서 필요한 값을
+		    비전역 변수에 할당하여 inner function 이후의 값의 연결 문제를 해결 했다.
+		4. 화살표함수는 this가 없기 때문에 바깥범위에서 this를 찾는다.
+		5. 따라서 function (class도 function이다) 내부에 선언된 Arrow Function은
+		   자신을 포함한 함수의 인스턴스를 this로 갖는다.
+
