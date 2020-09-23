@@ -2,7 +2,7 @@
 react study
 
 **참고사이트**<br/>
-React : https://ko.reactjs.org/
+React : https://ko.reactjs.org/<br/>
         https://www.w3schools.com/react/default.asp
 	 
 Arrow Function : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98
