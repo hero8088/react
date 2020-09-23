@@ -38,7 +38,7 @@ Arrow Function : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/
 component가 mount된다는 것 : Dom에 사용되거나 다른 component의 rendering에 사용되는 경우
 </pre>
 
-**Events**
+**Events**<br/>
     Html과 React의 event 표현의 차이는 camelCase, {} 의 특징이 다르다.
 	
     이벤트 구문을 컴포넌트 클래스 안에 배치하는것이 좋다.
