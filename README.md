@@ -39,10 +39,9 @@ component가 mount된다는 것 : Dom에 사용되거나 다른 component의 ren
 </pre>
 
 **Events**
-<pre>
     Html과 React의 event 표현의 차이<br/>
-    Html : <button onclick="shoot()"></button><br/>
-    React : <button onClick={shoot()}></button> <br/>
+    Html : '<button onclick="shoot()"></button>'
+    React : '<button onClick={shoot()}></button>'
               camelCase, {} 의 특징이 다르다.
 	
     이벤트 구문을 컴포넌트 클래스 안에 배치하는것이 좋다.
@@ -61,5 +60,4 @@ component가 mount된다는 것 : Dom에 사용되거나 다른 component의 ren
 		4. 화살표함수는 this가 없기 때문에 바깥범위에서 this를 찾는다.
 		5. 따라서 function (class도 function이다) 내부에 선언된 Arrow Function은
 		   자신을 포함한 함수의 인스턴스를 this로 갖는다.
-</pre>
 
