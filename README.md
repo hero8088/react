@@ -3,7 +3,7 @@ react study
 
 **참고사이트**<br/>
 React : https://ko.reactjs.org/<br/>
-        https://www.w3schools.com/react/default.asp
+	https://www.w3schools.com/react/default.asp
 	 
 Arrow Function : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98
 
@@ -38,7 +38,8 @@ Arrow Function : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/
 component가 mount된다는 것 : Dom에 사용되거나 다른 component의 rendering에 사용되는 경우
 </pre>
 
-**Events**<br/>
+**Events**
+<pre>
     Html과 React의 event 표현의 차이<br/>
     Html : <button onclick="shoot()"></button><br/>
     React : <button onClick={shoot()}></button> <br/>
@@ -60,4 +61,5 @@ component가 mount된다는 것 : Dom에 사용되거나 다른 component의 ren
 		4. 화살표함수는 this가 없기 때문에 바깥범위에서 this를 찾는다.
 		5. 따라서 function (class도 function이다) 내부에 선언된 Arrow Function은
 		   자신을 포함한 함수의 인스턴스를 this로 갖는다.
+</pre>
 
