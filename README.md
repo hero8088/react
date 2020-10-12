@@ -46,6 +46,9 @@ component가 mount된다는 것 : Dom에 사용되거나 다른 component의 ren
 	class component에는 this 키워드가 기본적으로 정의 되지 않기 때문에 Arrow Function을 사용하지 않으면
 	일반적인 function은 그것을 호출한 객체 [ button, window ] 가 this가 된다.
 	
+	ex) button onClick = { () => this.timeChekc() }  : 버튼을 누를 때 만 실행
+	    button onClick = { this.timeChekc() }  : render()가 실행 될 때마다 실행
+	
 	다른 방법으로는 일반 function을 정의하고 class component의 생성자에 바인딩하는 방법이 있다.
 	[ this.shoot = this.shoot.bind(this) ]
 	
