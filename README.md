@@ -58,8 +58,9 @@ component가 mount된다는 것 : Dom에 사용되거나 다른 component의 ren
 	react가 render 한 객체의 이벤트 (ex: onClick)에서 호출되는 핸들러는
 	선언시 에는 현재 클래스를 가르키지만 사용시 에는 window객체를 가르키기 때문에
 	bind함수를 사용하면 click시에도 class객체를 가르키게 된다.
-
 	Arrow Function의 this는 항상 외부함수의 this를 상속받기 때문에 this가 일정하다.
+	onClick={ () => this.changeColor() }
+	onClick={ this.changeColor.bind(this) }
 	
 	**function의 this**
 		1. function은 자기자신의 인스턴트를 this로 갖는다.
