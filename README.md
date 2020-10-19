@@ -52,6 +52,15 @@ component가 mount된다는 것 : Dom에 사용되거나 다른 component의 ren
 	다른 방법으로는 일반 function을 정의하고 class component의 생성자에 바인딩하는 방법이 있다.
 	[ this.shoot = this.shoot.bind(this) ]
 	
+	**this**
+	객체지향 언어의 this = 현재 객체
+	자바스크립트의 this = 실행 context
+	react가 render 한 객체의 이벤트 (ex: onClick)에서 호출되는 핸들러는
+	선언시 에는 현재 클래스를 가르키지만 사용시 에는 window객체를 가르키기 때문에
+	bind함수를 사용하면 click시에도 class객체를 가르키게 된다.
+
+	Arrow Function의 this는 항상 외부함수의 this를 상속받기 때문에 this가 일정하다.
+	
 	**function의 this**
 		1. function은 자기자신의 인스턴트를 this로 갖는다.
 		2. inner function은 전역객체를 this로 갖는다.
