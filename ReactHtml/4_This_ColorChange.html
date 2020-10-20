@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+	
+
+</head>
+<body>
+  <div id="root"></div>
+  
+<script type="text/babel">
+	
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  
+  
+  changeColor() {
+  	if(this.state.color === "red") {
+    	this.setState({color: "yellow"});
+    } else {
+  		this.setState({color: "red"});
+  	}
+  }
+  
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <h1>My {this.state.color}</h1>
+        <p>
+          It is a {this.state.color}<br/>
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+        <button
+          type="button"
+          onClick={ this.changeColor.bind(this) }
+        >Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Car />, document.getElementById('root'));
+
+
+</script>
+
+</body>
+</html>

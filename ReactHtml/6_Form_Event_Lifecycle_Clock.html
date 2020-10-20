@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+		  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  		crossorigin="anonymous"></script>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+	
+</head>
+<body>
+	<div id="root1"></div>
+  <div id="root"></div>
+
+<script type="text/babel">
+	
+	class Clock extends React.Component {
+		constructor(props) {
+			super(props);
+			this.state = {ate: new Date(), cnt: 0};
+		}
+			
+		componentDidMount() {
+			this.timerID = setInterval(
+				() => this.tick(), 1000
+			);
+			alert("시계를 사용합니다.");
+		}
+		
+		componentDidUpdate() {
+	    document.getElementById("root1").innerHTML =
+	    "이름을 입력하면 시계가 사라집니다. " + ++this.state.cnt;
+	  }
+		
+		componentWillUnmount() {
+			clearInterval(this.timerID);
+			alert("시계를 사용하지 않습니다.");
+			document.getElementById("root1").innerHTML = "";
+			this.setState({cnt: 0});
+		}
+		
+		tick() {
+			this.setState({
+				ate: new Date()	
+			});
+		}
+		
+		render() {
+			return (
+				<div>
+					<h1>It is {this.state.ate.toLocaleTimeString()}.</h1>
+				</div>
+			);
+		}
+	}
+	
+	class MyForm extends React.Component {
+		constructor(props) {
+			super(props);
+			this.state = { username: '',
+										 age : null,
+										 errmsg : '',
+										 clock : 'Y'
+			};
+		}
+		mySubmitHandler = (ev) => {
+			ev.preventDefault();
+			if (this.state.clock === 'Y' || this.state.errmsg) {
+				alert('잘못된 데이터가 있습니다.');
+				return false;
+			}
+			alert("제출되었습니다.");
+			
+		}
+		myChangeHandler  =  (ev) => {
+			let nam = ev.target.name;
+			let val =  ev.target.value;
+			this.setState({errmsg: ''});
+			if (nam === "username" && val.length == 0 ) {
+					this.setState({errmsg: <strong>이름을 입력하세요.</strong>});
+			}
+			if (nam === "age" && !Number(val)) {
+					this.setState({errmsg: <strong>숫자만 입력 가능해요.</strong>});
+			}
+			this.setState({[nam]: val});
+		}
+		
+		getSnapshotBeforeUpdate(prevProps, prevState) {
+	   
+	  }
+		
+   	componentDidUpdate() {
+			if(!this.state.username){
+				if (this.state.clock !== 'Y'){
+					this.setState({clock:'Y'});
+				}
+			}else{
+				if (this.state.clock !== 'N'){
+					this.setState({clock:'N'});
+				}
+			}
+		}
+
+		render() {
+			let renderTxt = '';
+				if(!this.state.username){
+					renderTxt = <Clock />;
+				} else if(!this.state.age){
+					renderTxt = <h1> 안녕하세요 {this.state.username}님 </h1>;
+				} else {
+					renderTxt = <h1> Hello {this.state.username}님  {this.state.age}세 입니다.</h1>;
+				}
+				
+			return (
+				<form onSubmit={this.mySubmitHandler}>
+						{renderTxt}
+						<p>Enter your name : </p>
+						<input type='text' name='username' onChange={this.myChangeHandler} />
+						<p>Enter your age : </p>
+						<input type='text' name='age' onChange={this.myChangeHandler} />
+						<br/>
+						{this.state.errmsg}
+						<br/>
+						<input type='submit' />
+				</form>		
+			);	
+		}	
+		
+		
+		
+	}
+
+	ReactDOM.render(<MyForm />, document.getElementById('root'));
+	//ReactDOM.render(<MyForm />, document.getElementById('root1'));
+
+
+</script>
+
+</body>
+</html>
