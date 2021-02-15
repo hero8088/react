@@ -1,3 +1,5 @@
+#npm start 로 실행..
+
 # react
 react study
 
